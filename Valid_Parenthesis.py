@@ -1,11 +1,12 @@
-class Solution:
-    def isValid(self, s: str) -> bool:
-        #new_approach(97/97 testcases passed)* min. runtime and memory compile (27 ms,16.61 mb)*
+class Solution(object):
+    def isValid(self, s):
+        #T(C(N)==O(N)) and S(C(N)==O(N)) as it take non contiguous memory allocation iteratively
+        #new_approach(py(runtime(14ms))
         st = []#stack list initalize
         for c in s:#iterating each character value in stack
             if c == '(':st.append(')')#appending '(' in stack  to ')'
-            elif c == '{':st.append('}')#appending '{' in stack  to '}'
-            elif c == '[':st.append(']')#appending '[' in stack  to ']'
+            elif c == '{':st.append('}')#appending '(' in stack  to ')'
+            elif c == '[':st.append(']')#appending '(' in stack  to ')'
             elif not st or st.pop() != c:return False#printing false to different char val is determined
         return not st#printing true  val to same deterministic char
 
